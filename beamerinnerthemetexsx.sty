@@ -1,0 +1,43 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+ % \useasboundingbox  (Graph.north west) rectangle (Text.south east);
+
+\begin{tikzpicture}[remember picture, overlay]
+    \node[anchor=north west] (One) 
+    {\includegraphics[scale=.15]{images/Logo-WhiteBackground-AF.png}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+   \node[anchor=north east,inner sep=0pt] (Two) at (current page.north east)
+    {\includegraphics[scale=.35]{images/CRT SFI Lock Up.png}};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture, overlay]
+   \node[anchor=south west,inner sep=0pt] (Three) at (current page.south west)
+    {\includegraphics[scale=.35]{images/CRT Machine Learning Lock Up Banner 10-07-20.jpg}};
+\end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]
+{ 
+   \vskip2cm%
+    %Adjust left skip in case if title is not coming in center
+    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip0.75cm%
+    %Adjust left skip in case if your name is not coming in center
+    \begin{beamercolorbox}[wd=12cm,leftskip=4.5cm,#1]{author}
+      \usebeamerfont{author}\insertauthor%
+    \end{beamercolorbox}
+     \vskip0.2cm%
+    \begin{beamercolorbox}[wd=12cm,leftskip=4.5cm,#1]{date}
+      \usebeamerfont{author}\insertdate%
+    \end{beamercolorbox}
+  \vfill
+}
+
+\mode
+<all>
