@@ -19,24 +19,34 @@
 \end{tikzpicture}
 }
 
+\def\supervisor#1{\gdef\insertsupervisor{#1}}
+\supervisor{}
+
 % Title page
-\defbeamertemplate*{title page}{texsx}[1][]
-{ 
-   \vskip2cm%
-    %Adjust left skip in case if title is not coming in center
-    \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
-      \usebeamerfont{title}\inserttitle\par%
-    \end{beamercolorbox}%
-    \vskip0.75cm%
-    %Adjust left skip in case if your name is not coming in center
-    \begin{beamercolorbox}[wd=12cm,leftskip=4.5cm,#1]{author}
-      \usebeamerfont{author}\insertauthor%
-    \end{beamercolorbox}
-     \vskip0.2cm%
-    \begin{beamercolorbox}[wd=12cm,leftskip=4.5cm,#1]{date}
-      \usebeamerfont{author}\insertdate%
+
+\defbeamertemplate*{title page}{mydefault}[1][]
+{
+  \vbox{}
+    \vspace*{-8ex}
+    \begin{beamercolorbox}[wd=\paperwidth,sep=8pt,left,#1]{institute}
+     {\usebeamercolor[fg]{titlegraphic}\raisebox{-.3\height}{\inserttitlegraphic}}\quad
+     {\usebeamerfont{institute}\insertinstitute}
     \end{beamercolorbox}
   \vfill
+  \begin{centering}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{author}      \insertauthor \par\medskip
+        \insertsupervisor
+    \end{beamercolorbox}
+  \end{centering}
+  \vfill
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
 }
 
 \mode

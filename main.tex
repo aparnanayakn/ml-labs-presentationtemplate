@@ -1,11 +1,15 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\title{Your title goes here}
-\date{\today}
-\author{Your name}
+\def\supervisor#1{\gdef\insertsupervisor{#1}}
+\supervisor{}
 
 \usetheme{texsx}
+
+\title{Your title goes here}
+\author{Your name \\ student number }
+\supervisor{Supervisors: \\ Supervisor 1  \\ Supervisor 2}
+\date{\today}
 
 \begin{document}
 
